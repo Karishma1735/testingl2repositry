@@ -192,7 +192,7 @@ export const ProductManager = () => {
       </div>
 
       {/* Filter / Search Bar */}
-      <div className="bg-white p-4 border border-atelier-200 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-surface p-4 border border-atelier-200 flex flex-col md:flex-row items-center justify-between gap-4">
         <form onSubmit={handleSearchSubmit} className="flex-1 w-full relative">
           <input
             type="text"
@@ -227,7 +227,7 @@ export const ProductManager = () => {
       </div>
 
       {/* Product Table */}
-      <div className="bg-white border border-atelier-200 shadow-sm overflow-x-auto">
+      <div className="bg-surface border border-atelier-200 shadow-sm overflow-x-auto">
         <table className="w-full text-left text-xs">
           <thead className="bg-atelier-50 border-b border-atelier-200 text-[10px] uppercase tracking-wider text-atelier-600">
             <tr>
@@ -302,7 +302,7 @@ export const ProductManager = () => {
                           </span>
                         )}
                         {p.isFeatured && (
-                          <span className="text-[9px] bg-atelier-gold text-atelier-950 px-1.5 py-0.5 uppercase font-medium">
+                          <span className="text-[9px] bg-accent text-accent-foreground px-1.5 py-0.5 uppercase font-medium">
                             Featured
                           </span>
                         )}
@@ -338,7 +338,7 @@ export const ProductManager = () => {
       {/* Add / Edit Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white max-w-2xl w-full p-8 shadow-2xl border border-atelier-200 max-h-[90vh] overflow-y-auto space-y-6 animate-fade-in">
+          <div className="bg-surface max-w-2xl w-full p-8 shadow-2xl border border-atelier-200 max-h-[90vh] overflow-y-auto space-y-6 animate-fade-in">
             <div className="flex items-center justify-between pb-4 border-b border-atelier-200">
               <h3 className="font-serif text-xl text-atelier-950 font-normal">
                 {editingProduct ? 'Edit Handbag' : 'Add Handbag to Catalog'}

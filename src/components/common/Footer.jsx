@@ -161,7 +161,7 @@ export const Footer = () => {
               />
               <button
                 type="submit"
-                className="px-5 py-2.5 bg-atelier-gold text-atelier-950 text-xs uppercase tracking-luxury font-medium hover:bg-atelier-gold-dark transition-colors"
+                className="px-5 py-2.5 bg-accent text-accent-foreground text-xs uppercase tracking-luxury font-medium hover:bg-accent-hover transition-colors"
               >
                 Join
               </button>

@@ -10,6 +10,7 @@ import {
   ShieldAlert
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { ThemeToggle } from '../../components/common/ThemeToggle.jsx';
 
 export const AdminLayout = () => {
   const { user, logout } = useAuth();
@@ -93,20 +94,23 @@ export const AdminLayout = () => {
       {/* Main Admin Content Area */}
       <main className="flex-1 overflow-x-hidden min-h-screen flex flex-col">
         {/* Top Header */}
-        <header className="bg-white border-b border-atelier-200 px-6 py-4 flex items-center justify-between">
+        <header className="bg-surface border-b border-atelier-200 px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs text-atelier-500">
             <span className="uppercase tracking-wider font-semibold text-atelier-950">
               Maison Administration
             </span>
           </div>
 
-          <Link
-            to="/"
-            className="text-xs uppercase tracking-luxury text-atelier-700 hover:text-atelier-950 flex items-center gap-1.5 font-medium border border-atelier-300 px-3 py-1.5 bg-atelier-50"
-          >
-            <Store className="w-3.5 h-3.5 text-atelier-gold" />
-            <span>View Live Store</span>
-          </Link>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+              to="/"
+              className="text-xs uppercase tracking-luxury text-atelier-700 hover:text-atelier-950 flex items-center gap-1.5 font-medium border border-atelier-300 px-3 py-1.5 bg-atelier-50"
+            >
+              <Store className="w-3.5 h-3.5 text-atelier-gold" />
+              <span>View Live Store</span>
+            </Link>
+          </div>
         </header>
 
         {/* Route views */}

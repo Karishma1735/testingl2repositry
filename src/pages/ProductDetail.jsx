@@ -262,7 +262,7 @@ export const ProductDetail = () => {
             <div className="space-y-4 pt-2">
               <div className="flex gap-4">
                 {/* Quantity picker */}
-                <div className="inline-flex items-center border border-atelier-300 bg-white">
+                <div className="inline-flex items-center border border-atelier-300 bg-surface">
                   <button
                     onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
                     disabled={quantity <= 1}
@@ -301,7 +301,7 @@ export const ProductDetail = () => {
                   className={`p-4 border transition-colors ${
                     wishlisted
                       ? 'bg-atelier-950 text-red-500 border-atelier-950'
-                      : 'border-atelier-300 bg-white text-atelier-700 hover:border-atelier-950'
+                      : 'border-atelier-300 bg-surface text-atelier-700 hover:border-atelier-950'
                   }`}
                   aria-label={wishlisted ? 'Remove from wishlist' : 'Save to wishlist'}
                 >

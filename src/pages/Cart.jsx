@@ -80,7 +80,7 @@ export const Cart = () => {
 
                 <div className="flex items-center gap-4">
                   {/* Quantity Stepper */}
-                  <div className="inline-flex items-center border border-atelier-300 bg-white">
+                  <div className="inline-flex items-center border border-atelier-300 bg-surface">
                     <button
                       onClick={() => updateQuantity(item._id, item.quantity - 1)}
                       className="p-1.5 hover:bg-atelier-100 text-atelier-700 transition-colors"

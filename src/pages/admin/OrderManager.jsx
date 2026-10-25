@@ -85,7 +85,7 @@ export const OrderManager = () => {
               className={`text-xs px-3 py-1.5 border transition-all ${
                 statusFilter === s
                   ? 'bg-atelier-950 text-white border-atelier-950 font-medium'
-                  : 'bg-white text-atelier-700 border-atelier-200 hover:border-atelier-400'
+                  : 'bg-surface text-atelier-700 border-atelier-200 hover:border-atelier-400'
               }`}
             >
               {s}
@@ -95,7 +95,7 @@ export const OrderManager = () => {
       </div>
 
       {/* Orders Table */}
-      <div className="bg-white border border-atelier-200 shadow-sm overflow-x-auto">
+      <div className="bg-surface border border-atelier-200 shadow-sm overflow-x-auto">
         <table className="w-full text-left text-xs">
           <thead className="bg-atelier-50 border-b border-atelier-200 text-[10px] uppercase tracking-wider text-atelier-600">
             <tr>
@@ -195,7 +195,7 @@ export const OrderManager = () => {
       {/* Inspect Order Modal */}
       {selectedOrder && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white max-w-2xl w-full p-8 shadow-2xl border border-atelier-200 max-h-[90vh] overflow-y-auto space-y-6 animate-fade-in">
+          <div className="bg-surface max-w-2xl w-full p-8 shadow-2xl border border-atelier-200 max-h-[90vh] overflow-y-auto space-y-6 animate-fade-in">
             <div className="flex items-center justify-between pb-4 border-b border-atelier-200">
               <div>
                 <span className="text-[10px] uppercase tracking-wider text-atelier-500">
@@ -274,7 +274,7 @@ export const OrderManager = () => {
               <select
                 value={selectedOrder.orderStatus}
                 onChange={(e) => handleStatusChange(selectedOrder._id, e.target.value)}
-                className="bg-white border border-atelier-300 text-xs p-2 focus:outline-none focus:border-atelier-950 font-semibold"
+                className="bg-surface border border-atelier-300 text-xs p-2 focus:outline-none focus:border-atelier-950 font-semibold"
               >
                 {STATUSES.filter((s) => s !== 'All').map((s) => (
                   <option key={s} value={s}>

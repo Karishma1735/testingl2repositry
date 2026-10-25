@@ -66,7 +66,7 @@ export const Dashboard = () => {
 
       {/* 4 Metric Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-6 border border-atelier-200 shadow-sm space-y-2">
+        <div className="bg-surface p-6 border border-atelier-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between text-atelier-500">
             <span className="text-xs uppercase tracking-wider font-semibold">Total Revenue</span>
             <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center">
@@ -81,7 +81,7 @@ export const Dashboard = () => {
           </span>
         </div>
 
-        <div className="bg-white p-6 border border-atelier-200 shadow-sm space-y-2">
+        <div className="bg-surface p-6 border border-atelier-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between text-atelier-500">
             <span className="text-xs uppercase tracking-wider font-semibold">Total Orders</span>
             <div className="w-8 h-8 rounded-full bg-atelier-150 text-atelier-900 flex items-center justify-center">
@@ -96,7 +96,7 @@ export const Dashboard = () => {
           </span>
         </div>
 
-        <div className="bg-white p-6 border border-atelier-200 shadow-sm space-y-2">
+        <div className="bg-surface p-6 border border-atelier-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between text-atelier-500">
             <span className="text-xs uppercase tracking-wider font-semibold">Catalog Items</span>
             <div className="w-8 h-8 rounded-full bg-atelier-150 text-atelier-900 flex items-center justify-center">
@@ -111,7 +111,7 @@ export const Dashboard = () => {
           </span>
         </div>
 
-        <div className="bg-white p-6 border border-atelier-200 shadow-sm space-y-2">
+        <div className="bg-surface p-6 border border-atelier-200 shadow-sm space-y-2">
           <div className="flex items-center justify-between text-atelier-500">
             <span className="text-xs uppercase tracking-wider font-semibold">Registered Clients</span>
             <div className="w-8 h-8 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center">
@@ -149,7 +149,7 @@ export const Dashboard = () => {
             {m.lowStockProducts.map((p) => (
               <div
                 key={p._id}
-                className="bg-white p-3 border border-amber-200 flex items-center gap-3 text-xs"
+                className="bg-surface p-3 border border-amber-200 flex items-center gap-3 text-xs"
               >
                 <img
                   src={p.images[0]}
@@ -170,7 +170,7 @@ export const Dashboard = () => {
       )}
 
       {/* Recent Orders Overview */}
-      <div className="bg-white border border-atelier-200 shadow-sm space-y-4">
+      <div className="bg-surface border border-atelier-200 shadow-sm space-y-4">
         <div className="p-6 border-b border-atelier-150 flex items-center justify-between">
           <h3 className="font-serif text-lg text-atelier-950 font-medium">
             Recent Client Orders

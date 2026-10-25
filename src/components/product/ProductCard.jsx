@@ -44,7 +44,7 @@ export const ProductCard = ({ product }) => {
             </span>
           )}
           {product.isFeatured && !product.isBestSeller && (
-            <span className="bg-atelier-gold text-atelier-950 text-[9px] uppercase tracking-luxury px-2 py-0.5 font-semibold">
+            <span className="bg-accent text-accent-foreground text-[9px] uppercase tracking-luxury px-2 py-0.5 font-semibold">
               Signature
             </span>
           )}
@@ -69,7 +69,7 @@ export const ProductCard = ({ product }) => {
           className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-200 z-10 ${
             wishlisted
               ? 'bg-atelier-950 text-red-500 shadow-md'
-              : 'bg-white/90 text-atelier-800 hover:text-atelier-950 hover:bg-white shadow-sm'
+              : 'bg-surface/90 text-atelier-800 hover:text-atelier-950 hover:bg-surface shadow-sm'
           }`}
           aria-label={wishlisted ? 'Remove from wishlist' : 'Save to wishlist'}
         >

@@ -72,7 +72,7 @@ export const OrderSuccess = () => {
       </div>
 
       {/* Order Summary Receipt Box */}
-      <div className="bg-white border border-atelier-200 divide-y divide-atelier-200 shadow-sm">
+      <div className="bg-surface border border-atelier-200 divide-y divide-atelier-200 shadow-sm">
         {/* Meta Bar */}
         <div className="p-6 bg-atelier-100/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs">
           <div>
@@ -196,7 +196,7 @@ export const OrderSuccess = () => {
         </Link>
         <Link
           to="/shop"
-          className="px-8 py-3.5 bg-white border border-atelier-300 text-atelier-900 text-xs uppercase tracking-luxury hover:border-atelier-950 transition-colors text-center"
+          className="px-8 py-3.5 bg-surface border border-atelier-300 text-atelier-900 text-xs uppercase tracking-luxury hover:border-atelier-950 transition-colors text-center"
         >
           Continue Shopping
         </Link>

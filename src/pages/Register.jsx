@@ -56,7 +56,7 @@ export const Register = () => {
 
   return (
     <div className="min-h-[75vh] flex items-center justify-center py-16 px-4">
-      <div className="max-w-md w-full bg-white border border-atelier-200 p-8 sm:p-10 shadow-lg space-y-8">
+      <div className="max-w-md w-full bg-surface border border-atelier-200 p-8 sm:p-10 shadow-lg space-y-8">
         {/* Brand Header */}
         <div className="text-center space-y-2">
           <span className="font-serif text-2xl tracking-[0.2em] uppercase text-atelier-950 font-medium block">

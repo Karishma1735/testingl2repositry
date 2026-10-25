@@ -15,6 +15,7 @@ import {
 import { useAuth } from '../../context/AuthContext.jsx';
 import { useCart } from '../../context/CartContext.jsx';
 import { useWishlist } from '../../context/WishlistContext.jsx';
+import { ThemeToggle } from './ThemeToggle.jsx';
 
 export const Navbar = () => {
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
@@ -47,7 +48,7 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-40 w-full transition-all duration-200">
       {/* Top Announcement Bar */}
-      <div className="bg-atelier-950 text-atelier-200 text-[11px] tracking-super-wide uppercase py-2 px-4 text-center border-b border-atelier-800">
+      <div className="bg-accent text-accent-foreground text-[10px] tracking-super-wide uppercase py-2.5 px-4 text-center border-b border-accent/70">
         <span>Complimentary Express Delivery on Orders Over $250</span>
       </div>
 
@@ -104,7 +105,9 @@ export const Navbar = () => {
           </div>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2.5 sm:gap-4">
+            <ThemeToggle />
+
             {/* Search Trigger */}
             <button
               onClick={() => setSearchOpen(!searchOpen)}
@@ -146,7 +149,7 @@ export const Navbar = () => {
                   {userDropdownOpen && (
                     <div
                       onMouseLeave={() => setUserDropdownOpen(false)}
-                      className="absolute right-0 mt-2 w-48 bg-white border border-atelier-200 shadow-xl py-2 z-50 animate-fade-in text-xs"
+                      className="absolute right-0 mt-2 w-48 bg-surface border border-atelier-200 shadow-xl py-2 z-50 animate-fade-in text-xs"
                     >
                       <div className="px-4 py-2 border-b border-atelier-100">
                         <p className="font-semibold text-atelier-950 truncate">{user.name}</p>
@@ -157,9 +160,9 @@ export const Navbar = () => {
                         <Link
                           to="/admin"
                           onClick={() => setUserDropdownOpen(false)}
-                          className="flex items-center gap-2 px-4 py-2.5 text-amber-900 hover:bg-amber-50/70 font-medium"
+                          className="flex items-center gap-2 px-4 py-2.5 text-accent hover:bg-accent/10 font-medium"
                         >
-                          <ShieldAlert className="w-3.5 h-3.5 text-amber-700" />
+                          <ShieldAlert className="w-3.5 h-3.5 text-accent" />
                           <span>Admin Dashboard</span>
                         </Link>
                       )}
@@ -208,7 +211,7 @@ export const Navbar = () => {
             >
               <ShoppingBag className="w-4 h-4 stroke-[1.8]" />
               {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-atelier-gold text-atelier-950 text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
                   {itemCount}
                 </span>
               )}
@@ -226,7 +229,7 @@ export const Navbar = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search leather totes, crossbody bags, clutches..."
-                className="w-full pl-9 pr-20 py-2 bg-white border border-atelier-200 text-xs text-atelier-900 placeholder:text-atelier-400 focus:outline-none focus:border-atelier-950"
+                className="w-full pl-9 pr-20 py-2 bg-surface border border-atelier-200 text-xs text-atelier-900 placeholder:text-atelier-400 focus:outline-none focus:border-atelier-950"
                 autoFocus
               />
               <button
@@ -242,7 +245,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-atelier-200 px-6 py-6 space-y-4 animate-fade-in">
+        <div className="lg:hidden bg-surface border-b border-atelier-200 px-6 py-6 space-y-4 animate-fade-in">
           <div className="space-y-3">
             {navLinks.map((link) => (
               <Link
@@ -261,7 +264,7 @@ export const Navbar = () => {
               <Link
                 to="/admin"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-xs uppercase tracking-luxury text-amber-800 font-bold flex items-center gap-2"
+                className="text-xs uppercase tracking-luxury text-accent font-bold flex items-center gap-2"
               >
                 <ShieldAlert className="w-4 h-4" />
                 <span>Admin Dashboard</span>

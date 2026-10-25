@@ -63,7 +63,7 @@ export const OrderHistory = () => {
         {orders.map((order) => (
           <div
             key={order._id}
-            className="bg-white border border-atelier-200 shadow-sm divide-y divide-atelier-150"
+            className="bg-surface border border-atelier-200 shadow-sm divide-y divide-atelier-150"
           >
             {/* Order Card Header */}
             <div className="p-6 bg-atelier-50/60 flex flex-wrap items-center justify-between gap-4 text-xs">
@@ -115,7 +115,7 @@ export const OrderHistory = () => {
 
                 <Link
                   to={`/order-success/${order._id}`}
-                  className="px-4 py-2 border border-atelier-300 bg-white hover:border-atelier-950 text-[11px] uppercase tracking-wider text-atelier-900 transition-colors flex items-center gap-1"
+                  className="px-4 py-2 border border-atelier-300 bg-surface hover:border-atelier-950 text-[11px] uppercase tracking-wider text-atelier-900 transition-colors flex items-center gap-1"
                 >
                   <span>Receipt</span>
                   <ChevronRight className="w-3.5 h-3.5" />

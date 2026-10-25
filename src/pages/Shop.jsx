@@ -163,7 +163,7 @@ export const Shop = () => {
           <button
             disabled={page <= 1}
             onClick={() => updateFilters({ page: page - 1 })}
-            className="p-2.5 border border-atelier-200 bg-white text-atelier-700 hover:text-atelier-950 hover:border-atelier-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="p-2.5 border border-atelier-200 bg-surface text-atelier-700 hover:text-atelier-950 hover:border-atelier-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             aria-label="Previous page"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -178,7 +178,7 @@ export const Shop = () => {
                 className={`w-9 h-9 text-xs font-medium border transition-colors ${
                   pageNum === page
                     ? 'bg-atelier-950 text-white border-atelier-950'
-                    : 'bg-white text-atelier-700 border-atelier-200 hover:border-atelier-400'
+                    : 'bg-surface text-atelier-700 border-atelier-200 hover:border-atelier-400'
                 }`}
               >
                 {pageNum}
@@ -189,7 +189,7 @@ export const Shop = () => {
           <button
             disabled={page >= pages}
             onClick={() => updateFilters({ page: page + 1 })}
-            className="p-2.5 border border-atelier-200 bg-white text-atelier-700 hover:text-atelier-950 hover:border-atelier-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            className="p-2.5 border border-atelier-200 bg-surface text-atelier-700 hover:text-atelier-950 hover:border-atelier-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             aria-label="Next page"
           >
             <ChevronRight className="w-4 h-4" />

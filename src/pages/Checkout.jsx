@@ -177,7 +177,7 @@ export const Checkout = () => {
           {/* Left Form: Shipping + Payment Simulation */}
           <div className="lg:col-span-7 space-y-10">
             {/* Step 1: Shipping Address */}
-            <div className="bg-white p-6 sm:p-8 border border-atelier-200 space-y-6">
+            <div className="bg-surface p-6 sm:p-8 border border-atelier-200 space-y-6">
               <div className="flex items-center gap-2 pb-4 border-b border-atelier-150">
                 <Truck className="w-4 h-4 text-atelier-gold" />
                 <h3 className="font-serif text-base uppercase tracking-wider text-atelier-950 font-medium">
@@ -264,7 +264,7 @@ export const Checkout = () => {
             </div>
 
             {/* Step 2: Payment Simulation */}
-            <div className="bg-white p-6 sm:p-8 border border-atelier-200 space-y-6">
+            <div className="bg-surface p-6 sm:p-8 border border-atelier-200 space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-atelier-150">
                 <div className="flex items-center gap-2">
                   <CreditCard className="w-4 h-4 text-atelier-gold" />

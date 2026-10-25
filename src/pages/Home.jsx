@@ -57,49 +57,68 @@ export const Home = () => {
   ];
 
   return (
-    <div className="space-y-24 pb-20">
+    <div className="flex flex-col gap-24 pb-20">
       {/* Editorial Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-atelier-950 text-white overflow-hidden">
-        {/* Background image with luxury overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=2000&q=85"
-            alt="Élégance Atelier Handcrafted Purse"
-            className="w-full h-full object-cover object-center opacity-40 scale-105 transition-transform duration-1000 ease-out"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-atelier-950 via-atelier-950/40 to-transparent" />
-        </div>
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-8 pt-4">
+        <div className="grid overflow-hidden rounded-[2rem] border border-atelier-200 bg-atelier-100 lg:min-h-[620px] lg:grid-cols-[0.94fr_1.06fr]">
+          <div className="flex flex-col items-start justify-center px-6 py-12 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-super-wide text-accent">
+              <Sparkles className="size-3.5" aria-hidden="true" />
+              Autumn / Winter · 2026
+            </span>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6">
-          <span className="inline-flex items-center gap-2 text-xs uppercase tracking-super-wide text-atelier-gold font-medium bg-white/5 backdrop-blur-md px-4 py-1.5 border border-white/10">
-            <Sparkles className="w-3.5 h-3.5 text-atelier-gold" />
-            Autumn / Winter 2026 Édition Limitée
-          </span>
+            <h1 className="mt-7 max-w-xl font-serif text-5xl font-normal leading-[1.04] tracking-tight text-atelier-950 sm:text-6xl lg:text-7xl">
+              Handmade for
+              <br className="hidden sm:block" />
+              <span className="italic text-accent">the long way home.</span>
+            </h1>
 
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-white leading-[1.1]">
-            Sculpted Elegance. <br />
-            <span className="italic font-normal">Uncompromised Luxury.</span>
-          </h1>
+            <p className="mt-6 max-w-lg text-sm leading-7 text-atelier-600 sm:text-base">
+              Thoughtfully crafted leather bags for the places you go, the things you carry, and the years you keep them.
+            </p>
 
-          <p className="text-sm sm:text-base text-atelier-300 max-w-2xl mx-auto font-light leading-relaxed">
-            Handcrafted in small batches across Tuscan workshops. Each handbag represents over thirty hours of precision leatherwork, hand-burnished seams, and bespoke gold-tone hardware.
-          </p>
+            <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <Link
+                to="/shop"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-xs font-semibold uppercase tracking-luxury text-accent-foreground shadow-lg transition-colors hover:bg-accent-hover sm:w-auto"
+              >
+                <span>Discover the collection</span>
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/shop"
-              className="w-full sm:w-auto px-9 py-4 bg-atelier-gold text-atelier-950 text-xs uppercase tracking-luxury font-medium hover:bg-atelier-gold-light transition-all flex items-center justify-center gap-2 shadow-2xl"
-            >
-              <span>Explore The Collection</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              <Link
+                to="/shop?sort=bestseller"
+                className="inline-flex w-full items-center justify-center rounded-full border border-atelier-300 px-7 py-3.5 text-xs font-medium uppercase tracking-luxury text-atelier-900 transition-colors hover:bg-surface sm:w-auto"
+              >
+                Shop best sellers
+              </Link>
+            </div>
 
-            <Link
-              to="/shop?sort=bestseller"
-              className="w-full sm:w-auto px-9 py-4 bg-transparent border border-white/30 text-white text-xs uppercase tracking-luxury font-medium hover:bg-white/10 transition-colors"
-            >
-              View Best Sellers
-            </Link>
+            <div className="mt-10 flex items-center gap-4 border-t border-atelier-200 pt-5">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                <Award className="size-5" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-atelier-900">Made slowly. Made to last.</p>
+                <p className="mt-1 text-xs text-atelier-500">Small-batch Italian leatherwork</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative min-h-[420px] overflow-hidden bg-atelier-200 sm:min-h-[520px] lg:min-h-[620px]">
+            <img
+              src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=2000&q=85"
+              alt="A handcrafted leather handbag from the Élégance Atelier collection"
+              className="absolute inset-0 size-full object-cover object-center transition-transform duration-1000 hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-black/5" />
+            <div className="absolute right-5 top-5 rounded-full border border-atelier-200/70 bg-surface/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-luxury text-atelier-900 shadow-sm backdrop-blur-sm sm:right-8 sm:top-8">
+              30+ hours of craft
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-9">
+              <p className="text-[10px] uppercase tracking-super-wide text-white/75">A study in considered details</p>
+              <p className="mt-2 font-serif text-2xl sm:text-3xl">Made in Tuscany, kept for years.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -263,7 +282,7 @@ export const Home = () => {
               alt="Artisan leatherworking atelier"
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-4 text-center border border-atelier-200">
+            <div className="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm p-4 text-center border border-atelier-200">
               <p className="font-serif text-xs text-atelier-950 uppercase tracking-widest font-medium">
                 Ponte a Ema Atelier — Florence, Italy
               </p>

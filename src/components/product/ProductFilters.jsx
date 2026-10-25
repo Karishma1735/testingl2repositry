@@ -39,7 +39,7 @@ export const ProductFilters = ({
   hasActiveFilters
 }) => {
   return (
-    <div className="bg-white p-6 border border-atelier-200/80 mb-8 space-y-6">
+    <div className="bg-surface p-6 border border-atelier-200/80 mb-8 space-y-6">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-atelier-150">
         <div className="flex items-center gap-2">
           <Filter className="w-4 h-4 text-atelier-gold" />
@@ -138,7 +138,7 @@ export const ProductFilters = ({
               className={`w-4 h-4 border flex items-center justify-center transition-colors ${
                 inStockOnly
                   ? 'bg-atelier-950 border-atelier-950 text-white'
-                  : 'bg-white border-atelier-300'
+                  : 'bg-surface border-atelier-300'
               }`}
             >
               {inStockOnly && <Check className="w-3 h-3 stroke-[2.5]" />}

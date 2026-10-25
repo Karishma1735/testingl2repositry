@@ -4,6 +4,7 @@ import { ToastProvider } from './context/ToastContext.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import { WishlistProvider } from './context/WishlistContext.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 import { Navbar } from './components/common/Navbar.jsx';
 import { Footer } from './components/common/Footer.jsx';
@@ -30,7 +31,7 @@ import { CustomerList } from './pages/admin/CustomerList.jsx';
 // Customer layout wrapper with sticky navbar, cart drawer, and luxury footer
 const CustomerLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-atelier-50 text-atelier-900 selection:bg-atelier-gold selection:text-atelier-950 font-sans">
+    <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-accent selection:text-accent-foreground font-sans">
       <Navbar />
       <CartDrawer />
       <main className="flex-1">
@@ -43,8 +44,9 @@ const CustomerLayout = () => {
 
 export default function App() {
   return (
-    <ToastProvider>
-      <AuthProvider>
+    <ThemeProvider>
+      <ToastProvider>
+        <AuthProvider>
         <CartProvider>
           <WishlistProvider>
             <BrowserRouter>
@@ -119,7 +121,8 @@ export default function App() {
             </BrowserRouter>
           </WishlistProvider>
         </CartProvider>
-      </AuthProvider>
-    </ToastProvider>
+        </AuthProvider>
+      </ToastProvider>
+    </ThemeProvider>
   );
 }

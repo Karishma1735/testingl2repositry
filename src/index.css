@@ -3,36 +3,234 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-[#faf8f5] text-[#161616];
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  :root {
+    color-scheme: light;
+    --background: 250 244 238;
+    --foreground: 54 30 38;
+    --surface: 255 252 248;
+    --surface-raised: 248 239 231;
+    --border: 229 211 202;
+    --muted: 239 225 217;
+    --muted-foreground: 119 91 94;
+    --accent: 174 28 52;
+    --accent-foreground: 255 250 245;
+    --accent-hover: 143 20 42;
+    --accent-soft: 245 220 220;
+    --foreground-soft: 224 213 235;
+    --foreground-muted: 194 181 214;
+
+    --atelier-950: 38 17 25;
+    --atelier-900: 55 29 38;
+    --atelier-800: 77 47 55;
+    --atelier-700: 99 70 76;
+    --atelier-600: 123 93 97;
+    --atelier-500: 151 119 120;
+    --atelier-400: 179 149 145;
+    --atelier-300: 205 180 172;
+    --atelier-200: 228 210 201;
+    --atelier-150: 239 225 217;
+    --atelier-100: 248 240 233;
+    --atelier-50: 255 250 245;
+
+    --danger-surface: 255 237 239;
+    --danger-border: 239 183 191;
+    --danger-foreground: 139 22 44;
+    --success-surface: 231 246 236;
+    --success-foreground: 30 103 68;
+    --warning-surface: 255 244 220;
+    --warning-foreground: 133 83 17;
   }
 
-  /* Custom subtle scrollbar */
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --background: 27 20 38;
+    --foreground: 243 237 249;
+    --surface: 37 28 50;
+    --surface-raised: 48 37 65;
+    --border: 73 57 92;
+    --muted: 54 41 72;
+    --muted-foreground: 188 174 211;
+    --accent: 203 176 232;
+    --accent-foreground: 42 26 57;
+    --accent-hover: 222 202 241;
+    --accent-soft: 91 67 120;
+    --foreground-soft: 222 212 238;
+    --foreground-muted: 195 182 216;
+
+    --atelier-950: 28 20 39;
+    --atelier-900: 38 28 53;
+    --atelier-800: 49 37 66;
+    --atelier-700: 64 49 84;
+    --atelier-600: 83 64 106;
+    --atelier-500: 123 102 149;
+    --atelier-400: 153 133 181;
+    --atelier-300: 181 164 204;
+    --atelier-200: 71 56 90;
+    --atelier-150: 58 44 76;
+    --atelier-100: 47 35 64;
+    --atelier-50: 31 23 45;
+
+    --danger-surface: 76 36 54;
+    --danger-border: 126 62 82;
+    --danger-foreground: 250 183 194;
+    --success-surface: 33 66 57;
+    --success-foreground: 163 230 193;
+    --warning-surface: 74 59 40;
+    --warning-foreground: 240 207 139;
+  }
+
+  html {
+    background-color: rgb(var(--background));
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 240ms ease, color 240ms ease;
+  }
+
+  ::selection {
+    background: rgb(var(--accent));
+    color: rgb(var(--accent-foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+  }
+
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
   }
+
   ::-webkit-scrollbar-track {
-    background: #f4f1eb;
+    background: rgb(var(--surface-raised));
   }
+
   ::-webkit-scrollbar-thumb {
-    background: #c5a880;
-    border-radius: 3px;
+    background: rgb(var(--accent));
+    border: 2px solid rgb(var(--surface-raised));
+    border-radius: 999px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #a3845b;
+    background: rgb(var(--accent-hover));
   }
 }
 
-/* Glassmorphism nav header */
+@layer utilities {
+  :root[data-theme="dark"] :is(
+    [class~="text-atelier-950"],
+    [class~="text-atelier-900"],
+    [class~="text-atelier-800"]
+  ) {
+    color: rgb(var(--foreground));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="text-atelier-700"],
+    [class~="text-atelier-600"]
+  ) {
+    color: rgb(var(--foreground-muted));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="text-atelier-500"],
+    [class~="text-atelier-400"],
+    [class~="text-atelier-300"]
+  ) {
+    color: rgb(var(--muted-foreground));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="text-atelier-200"],
+    [class~="text-atelier-100"]
+  ) {
+    color: rgb(var(--foreground-soft));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="hover:text-atelier-950"]:hover,
+    [class~="hover:text-atelier-900"]:hover,
+    [class~="hover:text-atelier-800"]:hover
+  ) {
+    color: rgb(var(--foreground));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="hover:text-atelier-700"]:hover,
+    [class~="hover:text-atelier-600"]:hover
+  ) {
+    color: rgb(var(--foreground-muted));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="bg-red-50"],
+    [class~="bg-red-100"]
+  ) {
+    background-color: rgb(var(--danger-surface));
+  }
+
+  :root[data-theme="dark"] :is([class~="border-red-200"]) {
+    border-color: rgb(var(--danger-border));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="text-red-700"],
+    [class~="text-red-800"],
+    [class~="text-red-900"]
+  ) {
+    color: rgb(var(--danger-foreground));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="bg-amber-50"],
+    [class~="bg-amber-50/60"],
+    [class~="bg-amber-50/70"]
+  ) {
+    background-color: rgb(var(--warning-surface));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="border-amber-200"],
+    [class~="border-amber-300"]
+  ) {
+    border-color: rgb(var(--warning-foreground) / 0.35);
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="text-amber-700"],
+    [class~="text-amber-800"],
+    [class~="text-amber-900"]
+  ) {
+    color: rgb(var(--warning-foreground));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="bg-emerald-50"],
+    [class~="bg-emerald-100"]
+  ) {
+    background-color: rgb(var(--success-surface));
+  }
+
+  :root[data-theme="dark"] :is(
+    [class~="text-emerald-700"],
+    [class~="text-emerald-800"],
+    [class~="text-emerald-900"]
+  ) {
+    color: rgb(var(--success-foreground));
+  }
+}
+
 .nav-blur {
+  background-color: rgb(var(--surface) / 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(250, 248, 245, 0.88);
 }
 
-/* Animation utilities */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
@@ -40,4 +238,14 @@
 
 .animate-fade-in {
   animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -39,7 +39,7 @@ export const CustomerList = () => {
       </div>
 
       {/* Customers Table */}
-      <div className="bg-white border border-atelier-200 shadow-sm overflow-x-auto">
+      <div className="bg-surface border border-atelier-200 shadow-sm overflow-x-auto">
         <table className="w-full text-left text-xs">
           <thead className="bg-atelier-50 border-b border-atelier-200 text-[10px] uppercase tracking-wider text-atelier-600">
             <tr>
